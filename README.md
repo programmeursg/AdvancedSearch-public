@@ -44,3 +44,20 @@ The are four checkboxes which can change te search behaviour.
           If this is checked it shows the normally hidden calculated field. Now you can see which data is used to create the search results.
 
 Press the "Search" button to search for the desired search terms. 
+
+How to run te source code
+-----------------
+Open the "SearchClientDataSetGroup .groupproj" file in Delphi (I have Delphi 11).
+Add the "Package" folder and the "Project" folder to the library path 
+1. Tools -> Options 
+2. Language -> Delphi -> Library 
+3. Library path
+
+Then select SearchClientDataSetGroup in Delphi and with the right mousebutton choose:
+1. Clean All
+2. Build All
+
+Then select SearchClientDataSetPackage.bpl and with the right mouesbutton choose:
+1. Install
+
+Now you can run the application with the F9 key.
