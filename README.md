@@ -13,7 +13,9 @@ I don't deliver any stored procedure code with my code.
 First Usage
 -----------------
 After you have choosen a server, database and table connection with the "Build connectionstring" button you can choose a stored procedure from a dropdownbox and press the "Open" button
-![afbeelding](https://github.com/user-attachments/assets/01ab98d0-6e87-4d27-87e2-599fb90ef5b1)
+
+![Screenshot](https://github.com/programmeursg/AdvancedSearch-public/blob/main/ScreenShot.png)
+
 If it is a large dataset you see a progressbar and the progress text in the titlebar.
 First it loads the data from the stored procedure in steps so that a progress indicator is possible.
 
