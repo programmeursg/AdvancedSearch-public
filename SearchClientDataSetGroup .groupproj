@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{BF836F9D-E563-4508-AC73-467A1895A029}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="Project\SearchClientDataSet.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Package\SearchClientDataSetPackage.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="SearchClientDataSet">
+        <MSBuild Projects="Project\SearchClientDataSet.dproj"/>
+    </Target>
+    <Target Name="SearchClientDataSet:Clean">
+        <MSBuild Projects="Project\SearchClientDataSet.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="SearchClientDataSet:Make">
+        <MSBuild Projects="Project\SearchClientDataSet.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="SearchClientDataSetPackage">
+        <MSBuild Projects="Package\SearchClientDataSetPackage.dproj"/>
+    </Target>
+    <Target Name="SearchClientDataSetPackage:Clean">
+        <MSBuild Projects="Package\SearchClientDataSetPackage.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="SearchClientDataSetPackage:Make">
+        <MSBuild Projects="Package\SearchClientDataSetPackage.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="SearchClientDataSet;SearchClientDataSetPackage"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="SearchClientDataSet:Clean;SearchClientDataSetPackage:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="SearchClientDataSet:Make;SearchClientDataSetPackage:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
