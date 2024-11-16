@@ -47,13 +47,21 @@ The are four checkboxes which can change te search behaviour.
 
 Press the "Search" button to search for the desired search terms. 
 
-How to run te source code
+How to run te source code (tested in Delphi 11 en 12)
 -----------------
-Open the "SearchClientDataSetGroup .groupproj" file in Delphi (I have Delphi 11).
 Add the "Package" folder and the "Project" folder to the library path 
 1. Tools -> Options 
 2. Language -> Delphi -> Library 
 3. Library path
+
+Open in the Package folder the project: "SearchClientDataSetPackage.dproj" in Delphi.
+
+Then select SearchClientDataSetPackage.bpl and with the right mouesbutton choose:
+1. Clean
+2. Build
+3. Install
+
+Open the "SearchClientDataSetGroup .groupproj" file in Delphi.
 
 Then select SearchClientDataSetGroup in Delphi and with the right mousebutton choose:
 1. Clean All

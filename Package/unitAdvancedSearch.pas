@@ -14,13 +14,16 @@ type
 
   TAdvancedSearch = class(TComponent)
   private
-    FSearchProgress: TAdvancedSearchProgress;
+    const
+      calculatedField = 1;
+    var
+      FSearchProgress: TAdvancedSearchProgress;
 
-    enableCalcFields: Boolean;
-    calcFieldsCounter: Integer;
-    cloneCursorWithoutOpen: Boolean;
-    orSearch, showExcluded, calculatedFieldsVisible: Boolean;
-    FsearchString: string;
+      enableCalcFields: Boolean;
+      calcFieldsCounter: Integer;
+      cloneCursorWithoutOpen: Boolean;
+      orSearch, showExcluded, calculatedFieldsVisible: Boolean;
+      FsearchString: string;
 
     procedure ExtendSearchDataSet(clonedDataSet: TClientDataSet; calculatedFieldsVisible: Boolean);
     procedure MemoGetText(Sender: TField; var Text: string; DisplayText: Boolean);
@@ -73,6 +76,7 @@ begin
     with CreateField(clonedDataSet) do
     begin
       Visible := calculatedFieldsVisible;
+      Tag := calculatedField;
     end;
   end;
 
@@ -84,6 +88,7 @@ begin
     with CreateField(clonedDataSet) do
     begin
       Visible := calculatedFieldsVisible;
+      Tag := calculatedField;
     end;
   end;
 
@@ -95,6 +100,7 @@ begin
     with CreateField(clonedDataSet) do
     begin
       Visible := calculatedFieldsVisible;
+      Tag := calculatedField;
     end;
   end;
 
@@ -107,6 +113,7 @@ begin
     with CreateField(clonedDataSet) do
     begin
       Visible := calculatedFieldsVisible;
+      Tag := calculatedField;
     end;
   end;
 
@@ -297,10 +304,7 @@ begin
     //Loop through fields
     for fieldTeller := 0 to  DataSet.FieldList.Count-1 do
     begin
-      if (DataSet.Fields[fieldTeller] <> DataSet.FieldByName('Gewicht'))
-        and (DataSet.Fields[fieldTeller] <> DataSet.FieldByName('Count'))
-        and (DataSet.Fields[fieldTeller] <> DataSet.FieldByName('ExcludedWords'))
-         then
+      if (DataSet.Fields[fieldTeller].Tag <> calculatedField) then
       begin
         fieldValue := DataSet.Fields[fieldTeller].AsString;
 
@@ -395,11 +399,8 @@ begin
     //Loop through fields
     for fieldCounter := 0 to  DataSet.FieldList.Count-1 do
     begin
-      if (DataSet.Fields[fieldCounter] <> DataSet.FieldByName('Gewicht'))
-        and (DataSet.Fields[fieldCounter] <> DataSet.FieldByName('Count'))
-        and (DataSet.Fields[fieldCounter] <> DataSet.FieldByName('ExcludedWords')) then
+      if (DataSet.Fields[fieldCounter].Tag <> calculatedField) then
       begin
-
         fieldValue := DataSet.Fields[fieldCounter].AsString;
 
         posCount := Pos(UpperCase(stringValue), UpperCase(fieldValue), 1);
