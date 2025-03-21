@@ -6,7 +6,7 @@ Search on multiple words in a choosen storedprocedure with AND and OR with weigh
 Warning!
 -----------------
 This program let you choose a stored procedure from a list after you have build the connectionstring.
-I am not responsible for the content of the content of the stored procedure you choose.
+I am not responsible for the content of the stored procedure you choose.
 It is possible that the stored procedure you choose contains harmfull code such as DELETE and INSERT statements.
 I don't deliver any stored procedure code with my code.
 
