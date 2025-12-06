@@ -43,7 +43,7 @@ The are four checkboxes which can change te search behaviour.
           If this is checked the stored procedure data is reloaded from te database so that al recent changes are included.
           else it shows the earlier requested data from the search datasset. This is results in a speed gain.
 4. Show calculated 
-          If this is checked it shows the normally hidden calculated field. Now you can see which data is used to create the search results.
+          If this is checked it shows the normally hidden calculated fields. Now you can see which data is used to create the search results.
 
 Press the "Search" button to search for the desired search terms. 
 
