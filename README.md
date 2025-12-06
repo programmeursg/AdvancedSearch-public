@@ -1,7 +1,7 @@
 # AdvancedSearch
 Main description
 -----------------
-Search on multiple words in a choosen storedprocedure with AND and OR with weight and words counter.
+Search on multiple words in the results of a choosen storedprocedure with AND and OR with weight and words counter.
 
 Warning!
 -----------------
@@ -19,7 +19,7 @@ After you have choosen a server, database and table connection with the "Build c
 If it is a large dataset you see a progressbar and the progress text in the titlebar.
 First it loads the data from the stored procedure in steps so that a progress indicator is possible.
 
-If it is the first time the stored procedure is opened it skips step 3, 4 and 5
+If it is the first time the stored procedure is opened it skips steps 3, 4 and 5
 1. While loading the stored procedure it clones te data to a search dataset.
 2. It appends some calculated fields which is necessary for advanced searching.
 
@@ -34,7 +34,7 @@ Searching in a stored procedure
 -----------------
 The are four checkboxes which can change te search behaviour.
 1. Strict, 
-	If you want to show all records where all search terms appear in one record.  (AND search) 
+          If you want to show all records where all search terms appear in one record.  (AND search) 
           else it shows al the records that contain one of more of the search terms. (OR search)
 2. Include excluded
           This was for debugging purposes. If this is checked it show al the records where the Weight is 0. 0 Means it is not included in the normal result set.
